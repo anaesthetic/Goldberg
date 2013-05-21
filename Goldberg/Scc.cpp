@@ -1,6 +1,6 @@
 #include "Scc.h"
 #include <algorithm> //min
-
+//miaumiau
 Scc::Scc(Graph & graph): m_graph(graph), m_scc(graph.getNodesNumber()), m_index(graph.getNodesNumber()), m_low(graph.getNodesNumber()), m_on_stack(graph.getNodesNumber()), m_dfs_colour(graph.getNodesNumber())
 {
     m_scc_position.resize(m_graph.getNodesNumber()+1);
