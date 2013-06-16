@@ -6,9 +6,12 @@
 #include<stack>
 #include<vector>
 #include<set>
-
 using namespace std;
 
+#define ACTIVE_EDGE_WEIGHT_BOUND 0
+#define UNVISITED 0
+#define VISITED 1
+#define PROCESSED 2
 class Scc
 {
     public:
@@ -18,14 +21,16 @@ class Scc
         void topOrder();
         void negativeCycle();
         int getSccNumber(node v);
+        NodeArray <int> m_scc; // m_scc[node]=scc_number(node);
+        vector <node> m_top_order;
         
     private:
         Graph &m_graph;
         stack <node> m_stack;
         vector <int> m_scc_position;
-        vector <node> m_top_order;
+        
         NodeArray <int> m_on_stack;
-        NodeArray <int> m_scc; // m_scc[node]=scc_number(node);
+        
         NodeArray <int> m_index;
         NodeArray <int> m_low;
         int m_id;
