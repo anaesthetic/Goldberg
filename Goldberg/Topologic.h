@@ -53,7 +53,7 @@ private:
 	NodeArray<int> m_distanceArray;
 	NodeArray<int> m_visited;
 	std::stack<node> m_stack;
-	
+	int m_negative_vertices;
 	NodeArray < node > m_predForest;
 	std::vector <int> m_componentDistanceArray;
 	std::vector <node> m_componentPredsArray;

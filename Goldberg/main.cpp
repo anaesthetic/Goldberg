@@ -46,7 +46,7 @@ int main()
         w=w->getNext();
     }
     
-    GoldbergLayers layers(g, distanceArray);
+    GoldbergLayers layers(g, distanceArray, scc);
     
     
     for(int i=0; i<g.getNodesNumber(); i++)
@@ -57,6 +57,6 @@ int main()
             cout<<tmp[j]->getId()<<endl;
     }
     
-    getchar();
+    system("PAUSE");
     return 0;
 }

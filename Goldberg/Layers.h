@@ -15,7 +15,7 @@ public:
 	
 	//w konstruktorze za parametr podana jest tablica z najkrotsyzmi
 	//sciezkami wedlug ktorych maja zostac wyliczone warstwy
-	GoldbergLayers(Graph &graph, NodeArray < int > & distances );
+	GoldbergLayers(Graph &graph, NodeArray < int > & distances, NodeArray <int> &scc );
 	
 	//znajduje indeks najdalszego niepustego kubelka
 	int getMaxNotEmptyBucket();
@@ -33,7 +33,7 @@ private:
 
 	//wskaznik na tablice N - list ( N - warstw)
 	vector < vector < node > > m_layers;
-	vector <int> scc_counter;
+	vector <int> m_scc_counter;
 	Graph m_graph;
 };
 

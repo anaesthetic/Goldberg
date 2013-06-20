@@ -90,7 +90,10 @@ bool TopologicSSSP::checkIfTopologicOrder(const std::vector<node> &topSortArray,
             if(e->getWeight() <= WEIGHT_BOUND && //jezeli to aktywna krawedz oraz
 			   visited[u] == true &&  //target byl wczesniej w porzadku top oraz
  			   sccArray[u] != sccArray[v] ) // krawedz jest miedzy dwoma roznymi skladowymi
-			return false;
+ 			{
+                m_negative_vertices++;
+                return false;
+            }
 		}
 	}
 	return true;
