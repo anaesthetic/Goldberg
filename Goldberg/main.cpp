@@ -16,7 +16,7 @@ int main()
     
     
     cout<<g;
-    Scc s(g);
+    Scc s(g); 
     s.findAll();
     node v=g.getFirstNode();
     while(v!=0)

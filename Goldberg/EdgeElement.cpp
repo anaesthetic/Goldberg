@@ -38,5 +38,5 @@ EdgeElement::~EdgeElement()
 
 std::ostream& operator << ( std::ostream& stream, EdgeElement &e)
 {
-		stream << "(" << *e.m_source << "," << *e.m_target << ")";
+		stream << "(" << *e.m_source << "," << *e.m_target << ")" << " weight: " << e.m_weight;
 }
