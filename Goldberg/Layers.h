@@ -33,6 +33,7 @@ private:
 
 	//wskaznik na tablice N - list ( N - warstw)
 	vector < vector < node > > m_layers;
+	vector <int> scc_counter;
 	Graph m_graph;
 };
 

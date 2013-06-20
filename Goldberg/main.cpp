@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     Graph g(6, 0);
-    
+    cout<<"miau"<<endl;
     g.newEdge(0,1,2);
     g.newEdge(0,5,-1);
     g.newEdge(1,2,4);
