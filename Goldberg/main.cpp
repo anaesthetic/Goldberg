@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+ 	std::cout << "5" << endl;
     Graph g(6, 0);
     
     g.newEdge(0,1,2);
