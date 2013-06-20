@@ -6,6 +6,7 @@ GoldbergLayers::GoldbergLayers(Graph & graph, NodeArray < int > & distances )
     m_layers.resize(m_graph.getNodesNumber());
     for ( node n= m_graph.getFirstNode(); n!=0; n=n->getNext())
     {
+        if
         m_layers[-(distances[n])].push_back(n);
     }
 }
