@@ -93,7 +93,7 @@ void Scc::findAll()
                             }    
                             while(!m_stack.empty() && top != w);
                             m_scc_position[m_scc_number]=count;
-                            cout<<"m_scc_position["<<m_scc_number<<"]="<<count<<endl;
+                            //cout<<"m_scc_position["<<m_scc_number<<"]="<<count<<endl;
                             m_scc_number++;
                         }
                     }
@@ -106,13 +106,13 @@ void Scc::findAll()
     m_scc_position.resize(m_scc_number);
     for(int i=1; i<m_scc_position.size(); i++)
     {
-        cout<<i<<" th scc position - before: " <<m_scc_position[i]<<endl;
+        //cout<<i<<" th scc position - before: " <<m_scc_position[i]<<endl;
         m_scc_position[i] = m_scc_position[i] + m_scc_position[i-1];
     }
     for(int i=0; i<m_scc_position.size(); i++)
     {
         m_scc_position[i]--;
-        cout<<i<<" th scc position - after: " <<m_scc_position[i]<<endl;
+        //cout<<i<<" th scc position - after: " <<m_scc_position[i]<<endl;
     }
 }
 void Scc::topOrder()
@@ -124,8 +124,8 @@ void Scc::topOrder()
     for(node n=m_graph.getFirstNode(); n!=0; n=n->getNext())
     {
         scc_number=m_scc[n];
-        cout<<"numer skladowej wierzcholka n: "<<n->getId()<<"   to:   "<<scc_number<<endl;
-        cout<<"pozycja tego elementu: "<<m_scc_position[scc_number]-count[scc_number]<<endl;
+        //cout<<"numer skladowej wierzcholka n: "<<n->getId()<<"   to:   "<<scc_number<<endl;
+        //cout<<"pozycja tego elementu: "<<m_scc_position[scc_number]-count[scc_number]<<endl;
         
         m_top_order[m_scc_position[scc_number]-count[scc_number]]=n;
         count[scc_number]++;
@@ -137,16 +137,23 @@ void Scc::topOrder()
         m_top_order[i]=m_top_order[m_top_order.size()-i-1];
         m_top_order[m_top_order.size()-i-1]=tmp;
     }
-    cout<<"! wyszlismy"<<endl;
-    
+    //cout<<"! wyszlismy"<<endl;
+    /*
     for(int i=0; i<m_top_order.size(); i++)
     {
             cout<<"top "<<m_top_order[i]->getId()<<endl;
     }
+    */
     
 }
-void Scc::negativeCycle()
+bool Scc::negativeCycle()
 {
+    for(edge e = m_graph.getFirstEdge(); e !=0; e=e->getNext())
+    {
+        if((m_scc[e->getSource()] == m_scc[e->getTarget()]) && (e->getWeight()<0))
+            return true;
+    } 
+    return false;
 }
 int Scc::getSccNumber(node v)
 {

@@ -19,18 +19,24 @@ class Scc
         void findAll();
         void find(node v);
         void topOrder();
-        void negativeCycle();
+        bool negativeCycle();
         int getSccNumber(node v);
-        NodeArray <int> m_scc; // m_scc[node]=scc_number(node);
-        vector <node> m_top_order;
+        NodeArray < int > & getScc()
+        {
+            return m_scc;
+        }
+        vector <node> & getTopOrder()
+        {
+            return m_top_order;
+        }
         
     private:
         Graph &m_graph;
         stack <node> m_stack;
         vector <int> m_scc_position;
-        
+        NodeArray <int> m_scc; // m_scc[node]=scc_number(node);
         NodeArray <int> m_on_stack;
-        
+        vector <node> m_top_order;
         NodeArray <int> m_index;
         NodeArray <int> m_low;
         int m_id;

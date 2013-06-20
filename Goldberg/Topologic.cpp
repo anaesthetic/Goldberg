@@ -18,7 +18,8 @@ void TopologicSSSP::computeSSSP( const std::vector<node> &topSortArray,
 	assert(m_G.getNodesNumber() == topSortArray.size());
 	assert(m_G.getNodesNumber() == sccArray.getSize());
 	assert(checkIfTopologicOrder(topSortArray, sccArray));
-	m_componentDistanceArray[5] = 0;
+	//m_componentDistanceArray[5] = 0;
+    m_componentDistanceArray[m_G.getNodesNumber()] = 0;
 	for(int i = 0; i < topSortArray.size(); i++) {
 		node v = topSortArray[i];
 		for(edge e = v->getFirstEdge(); e !=0; e = e->getNext()) {

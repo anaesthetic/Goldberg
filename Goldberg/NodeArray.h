@@ -1,3 +1,5 @@
+#ifndef NODE_ARRAY_
+#define NODE_ARRAY_
 #include "NodeElement.h"
 
 /*
@@ -52,3 +54,4 @@ private:
 	int m_size;
 };
 
+#endif

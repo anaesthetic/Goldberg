@@ -1,3 +1,5 @@
+#ifndef EDGE_ARRAY_
+#define EDGE_ARRAY_
 #include "EdgeElement.h"
 
 /*
@@ -49,3 +51,5 @@ private:
 	T *m_tab;
 	int m_size;
 };
+
+#endif
