@@ -1,4 +1,5 @@
-
+#ifndef DIJKSTRA_
+#define DIJKSTRA_
 /* algorytm Dijkstry jako parametr wczytuje graf z wagami >= 0
  * i wykonuje algorytm SSSP z zadanego zrodla s.
  */
@@ -41,4 +42,5 @@ private:
 	//tablica przechowujaca wynik algorytmu: wskaznik na poprzednika
 	//w najkrotszej sciezce
 	NodeArray < node > m_preds;
-}
+};
+#endif

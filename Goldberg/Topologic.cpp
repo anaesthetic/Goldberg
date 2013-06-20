@@ -7,6 +7,7 @@ TopologicSSSP::TopologicSSSP(Graph& G):
 							 m_visited(G.getNodesNumber()), 
 							 m_predForest(G.getNodesNumber()),
 							 m_G(G),
+							 m_negative_vertices(0),
 							 m_componentDistanceArray(G.getNodesNumber()),
 							 m_componentPredsArray(G.getNodesNumber()),
 							 m_componentBestArray(G.getNodesNumber()) {
@@ -19,7 +20,7 @@ void TopologicSSSP::computeSSSP( const std::vector<node> &topSortArray,
 	assert(m_G.getNodesNumber() == sccArray.getSize());
 	assert(checkIfTopologicOrder(topSortArray, sccArray));
 	//m_componentDistanceArray[5] = 0;
-    m_componentDistanceArray[m_G.getNodesNumber()] = 0;
+    //m_componentDistanceArray[m_G.getNodesNumber()-1] = 0;
 	for(int i = 0; i < topSortArray.size(); i++) {
 		node v = topSortArray[i];
 		for(edge e = v->getFirstEdge(); e !=0; e = e->getNext()) {

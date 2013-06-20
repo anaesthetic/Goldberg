@@ -1,4 +1,5 @@
-
+#ifndef DIAL_
+#define DIAL_
 /* algorytm Diala jako parametr wczytuje graf o krawedziach z wagami
  * CALKOWITYMI i wykonuje algorytm SSSP z zadanego zrodla s.
  * Dodatkowym wymaganiem jest ograniczenie na dlugosc najkrotszej sciezki
@@ -43,4 +44,5 @@ private:
 	//tablica przechowujaca wynik algorytmu: wskaznik na poprzednika
 	//w najkrotszej sciezce
 	NodeArray < node > m_preds;
-}
+};
+#endif

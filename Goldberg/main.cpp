@@ -57,6 +57,6 @@ int main()
             cout<<tmp[j]->getId()<<endl;
     }
     
-    system("PAUSE");
+    system("pause");
     return 0;
 }
