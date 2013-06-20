@@ -4,10 +4,7 @@ using namespace std;
 
 int main()
 {
-	std::cout << " FIRST COMMIT " << endl;
- 	std::cout << "5" << endl;
     Graph g(6, 0);
-    cout<<"miau"<<endl;
     g.newEdge(0,1,2);
     g.newEdge(0,5,-1);
     g.newEdge(1,2,4);
@@ -58,6 +55,6 @@ int main()
             cout<<tmp[j]->getId()<<endl;
     }
     
-    system("pause");
+    int ddd; cin >> ddd;
     return 0;
 }
