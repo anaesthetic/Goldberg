@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+	/*
     Graph g(6, 0);
     g.newEdge(0,1,2);
     g.newEdge(0,5,-1);
@@ -13,7 +14,11 @@ int main()
     g.newEdge(3,5,-1);
     g.newEdge(4,3,-1);
     g.newEdge(5,4,-1);
-    
+    */
+    Graph g(3, 0);
+    g.newEdge(0,1,0);
+    g.newEdge(1,2,-1); 
+	g.newEdge(2,1,-1); 
     
     cout<<g;
     Scc s(g); 
