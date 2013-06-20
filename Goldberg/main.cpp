@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+	std::cout << " FIRST COMMIT " << endl;
  	std::cout << "5" << endl;
     Graph g(6, 0);
     cout<<"miau"<<endl;
